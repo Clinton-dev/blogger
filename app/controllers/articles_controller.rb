@@ -15,5 +15,15 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
 
     end
+
+    def destory
+      @article = Article.find(params[:id])
+      @article.destory
+      redirect_to article_path(index.html)
+    end
+
+    def edit
+      @article = Article.find(params:[id]) 
+    end
     
 end
