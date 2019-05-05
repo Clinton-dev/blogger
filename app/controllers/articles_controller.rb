@@ -16,14 +16,24 @@ class ArticlesController < ApplicationController
 
     end
 
-    def destory
-      @article = Article.find(params[:id])
-      @article.destory
-      redirect_to article_path(index.html)
-    end
+   def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+   
+    redirect_to articles_path
+  end
 
     def edit
-      @article = Article.find(params:[id]) 
+      @article = Article.find(params[:id])
+    end
+
+    def update 
+      @article = Article.find(params[:id])
+      @article.update(article_params)
+
+      flash.notice ="Article '#{@article.title}' updated!"
+
+      redirect_to article_path 
     end
     
 end

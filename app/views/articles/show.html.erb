@@ -1,1 +1,3 @@
-<%= link_to "delete", article_path(@article), method: :delete%>
+<%= link_to "Delete", article_path, method: :delete ,
+             data: {confrim: "really delete the article ?"} %>
+<%= link_to "edit", edit_article_path %>
