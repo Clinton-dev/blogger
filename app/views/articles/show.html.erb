@@ -1,3 +1,7 @@
+<h3>Comments (<%= @article.comments.size%>)</h3>
+<%= render partial: 'articles/comment', collection: @article.try(:comment) %>
+<%= render partial: 'comments/form' %>
+
 <%= link_to "Delete", article_path, method: :delete ,
              data: {confrim: "really delete the article ?"} %>
 <%= link_to "edit", edit_article_path %>
